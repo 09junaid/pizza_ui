@@ -1,5 +1,10 @@
+import { Button } from "@/components/ui/button";
+
 export default function Home() {
   return (
-   <h1>Welcome to pizza shop</h1>
+    <div className="p-8 space-y-4">
+      <h1 className="text-3xl font-bold">Welcome to Pizza Shop</h1>
+    <Button variant={"outline"}>Order Now</Button>
+        </div>
   );
 }
