@@ -9,7 +9,7 @@ export default function HomePage() {
         <div className='container mx-auto flex items-center justify-between py-8'>
         {/* left side */}
         <div>
-            <h1 className='text-7xl font-black font-bold font-sans'>
+            <h1 className='text-7xl font-black font-sans'>
                 Super Delicious Pizza in <br />
                 <span className='text-primary'>Only 45 Minutes!</span>
             </h1>
