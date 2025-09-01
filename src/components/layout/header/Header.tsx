@@ -6,10 +6,13 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
+import Link from 'next/link'
+import { Phone, ShoppingBasket } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 export default function Header() {
     return (
         <header className='bg-white'>
-            <nav className='container mx-auto py-5'>
+            <nav className='container mx-auto py-5 flex items-center justify-between'>
                 <div className='flex items-center space-x-4'>
                     <svg
                         data-testid="logo"
@@ -36,6 +39,24 @@ export default function Header() {
                     </Select>
                 </div>
 
+                {/* right side */}
+                <div className='flex items-center space-x-4'>
+                    <ul className='flex items-center font-medium space-x-4'>
+                        <li><Link href={"/"} className='hover:text-primary'>Menu</Link></li>
+                        <li><Link href={"/"} className='hover:text-primary'>Orders</Link></li>
+                    </ul>
+                    <div className='relative'>
+                        <Link href={"/"}><ShoppingBasket className='hover:text-primary'/></Link>
+                        <span className="absolute -top-4 -right-5 h-6 w-6 flex items-center justify-center rounded-full bg-primary font-bold text-white">
+                            3
+                        </span>
+                    </div>
+                    <div className="flex items-center ml-12">
+                        <Phone />
+                        <span>+91 9800 098 998</span>
+                    </div>
+                    <Button>Logout</Button>
+                </div>
             </nav>
         </header>
     )
