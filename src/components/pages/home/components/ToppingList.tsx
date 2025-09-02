@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import chicken from '../../../../../public/images/pngs/chicken.png'
-import jelapeno from '../../../../../public/images/pngs/Jelapeno.png'
+import jelapeno from '../../../../../public/images/pngs/jelapeno.png'
 import cheese from '../../../../../public/images/pngs/cheese.png'
 import ToppingCard, { Topping } from './ToppingCard';
 const toppings = [
