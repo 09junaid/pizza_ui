@@ -25,9 +25,9 @@ export default function ToppingList() {
 
 
     return (
-        <section className='mt-6'>
-            <h3>Extra toppings</h3>
-            <div className='grid grid-cols-3 mt-2 gap-4'>
+        <section className='mt-4 sm:mt-6'>
+            <h3 className='text-base sm:text-lg font-semibold'>Extra toppings</h3>
+            <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 mt-2 gap-2 sm:gap-3 lg:gap-4'>
                 {toppings.map((topping) => (
                     <ToppingCard topping={topping} key={topping.id} selectedToppings={selectedToppings}
                         handleCheckBoxCheck={handleCheckBoxCheck}

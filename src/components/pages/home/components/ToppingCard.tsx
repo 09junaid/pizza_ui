@@ -22,13 +22,19 @@ export default function ToppingCard({ topping, selectedToppings, handleCheckBoxC
             onClick={() => handleCheckBoxCheck(topping)}
             variant={'outline'}
             className={cn(
-                'flex flex-col h-42 relative',
-                isCurrentSelected ? 'border-primary' : ''
+                'flex flex-col h-32 sm:h-36 lg:h-40 relative p-2 sm:p-3 transition-all duration-200 hover:shadow-md',
+                isCurrentSelected ? 'border-primary bg-primary/5' : 'hover:border-primary/50'
             )}>
-            <Image src={topping.image} width={80} height={80} alt={topping.name} />
-            <h4>{topping.name}</h4>
-            <p>&#8377;{topping.price}</p>
-            {isCurrentSelected && <CircleCheck className="absolute top-1 right-1 text-primary" />}
+            <Image 
+                src={topping.image} 
+                width={80} 
+                height={80} 
+                alt={topping.name}
+                className='w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 object-contain'
+            />
+            <h4 className='text-xs sm:text-sm font-medium mt-1'>{topping.name}</h4>
+            <p className='text-xs sm:text-sm font-bold text-primary'>&#8377;{topping.price}</p>
+            {isCurrentSelected && <CircleCheck className="absolute top-1 right-1 text-primary w-4 h-4 sm:w-5 sm:h-5" />}
         </Button>
     )
 }

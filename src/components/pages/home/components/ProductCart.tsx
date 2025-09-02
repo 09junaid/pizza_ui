@@ -34,35 +34,49 @@ export default function ProductCart({
 }: PropTypes) {
     return (
         <div>
-            <Card className='border-none rounded-xl'>
+            <Card className='border-none rounded-xl hover:shadow-lg transition-shadow duration-300'>
                 <CardHeader className='pt-4 flex justify-center'>
-                    <Image src={product.image} alt={product.name} width={200} height={200} />
+                    <Image 
+                        src={product.image} 
+                        alt={product.name} 
+                        width={200} 
+                        height={200}
+                        className='w-full max-w-[150px] sm:max-w-[180px] lg:max-w-[200px] h-auto'
+                    />
                 </CardHeader>
-                <CardContent>
-                    <h2 className='text-xl font-bold'>{product.name}</h2>
-                    <p className='mt-2'>{product.description}</p>
+                <CardContent className='px-4 pb-4'>
+                    <h2 className='text-lg sm:text-xl font-bold text-center lg:text-left'>{product.name}</h2>
+                    <p className='mt-2 text-sm sm:text-base text-center lg:text-left text-gray-600'>{product.description}</p>
                 </CardContent>
-                <CardFooter className='flex items-center justify-between'>
-                    <p className='text-lg flex flex-row gap-1.5'>
+                <CardFooter className='flex flex-col sm:flex-row items-center justify-between gap-3 px-4 pb-4'>
+                    <p className='text-base sm:text-lg flex flex-row gap-1.5'>
                         <span>From</span>
                         <span className='font-bold'>Rs:{product.price}</span>
                     </p>
                     <Dialog>
-                        <DialogTrigger className='bg-orange-200 hover:bg-orange-300 text-orange-500 px-6 py-2 rounded-full cursor-pointer shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150'>Choose</DialogTrigger>
-                        <DialogContent className='sm:max-w-3xl p-0'>
-                            <div className='flex '>
-                                <div className='w-1/3 bg-white rounded-xl p-8 flex items-center justify-center'>
-                                    <Image src={product.image} alt={product.name} width={400} height={400} />
+                        <DialogTrigger className='bg-orange-200 hover:bg-orange-300 text-orange-500 px-4 sm:px-6 py-2 rounded-full cursor-pointer shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150 text-sm sm:text-base w-full sm:w-auto'>
+                            Choose
+                        </DialogTrigger>
+                        <DialogContent className='sm:max-w-4xl max-w-[95vw] max-h-[90vh] overflow-y-auto p-0'>
+                            <div className='flex flex-col lg:flex-row'>
+                                <div className='w-full lg:w-1/3 bg-white rounded-t-xl lg:rounded-l-xl lg:rounded-tr-none p-4 sm:p-6 lg:p-8 flex items-center justify-center'>
+                                    <Image 
+                                        src={product.image} 
+                                        alt={product.name} 
+                                        width={400} 
+                                        height={400}
+                                        className='w-full max-w-[200px] sm:max-w-[300px] lg:max-w-[400px] h-auto'
+                                    />
                                 </div>
-                                <div className='w-2/3 p-8'>
-                                    <h3 className='text-xl font-bold'>{product.name}</h3>
-                                    <p className='mt-1'>{product.description}</p>
+                                <div className='w-full lg:w-2/3 p-4 sm:p-6 lg:p-8'>
+                                    <h3 className='text-lg sm:text-xl font-bold'>{product.name}</h3>
+                                    <p className='mt-1 text-sm sm:text-base text-gray-600'>{product.description}</p>
 
                                     <div>
-                                        <h4 className="mt-6">Choose the size</h4>
+                                        <h4 className="mt-4 sm:mt-6 text-base sm:text-lg font-semibold">Choose the size</h4>
                                         <RadioGroup
                                             defaultValue="small"
-                                            className="grid grid-cols-3 gap-4 mt-2">
+                                            className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 mt-2">
                                             <div>
                                                 <RadioGroupItem
                                                     value="small"
@@ -72,7 +86,7 @@ export default function ProductCart({
                                                 />
                                                 <Label
                                                     htmlFor="small"
-                                                    className="flex flex-col items-center justify-between rounded-md border-2 bg-white p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary">
+                                                    className="flex flex-col items-center justify-between rounded-md border-2 bg-white p-3 sm:p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary text-sm sm:text-base">
                                                     Small
                                                 </Label>
                                             </div>
@@ -86,7 +100,7 @@ export default function ProductCart({
                                                 />
                                                 <Label
                                                     htmlFor="medium"
-                                                    className="flex flex-col items-center justify-between rounded-md border-2 bg-white p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary">
+                                                    className="flex flex-col items-center justify-between rounded-md border-2 bg-white p-3 sm:p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary text-sm sm:text-base">
                                                     Medium
                                                 </Label>
                                             </div>
@@ -100,17 +114,17 @@ export default function ProductCart({
                                                 />
                                                 <Label
                                                     htmlFor="large"
-                                                    className="flex flex-col items-center justify-between rounded-md border-2 bg-white p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary">
+                                                    className="flex flex-col items-center justify-between rounded-md border-2 bg-white p-3 sm:p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary text-sm sm:text-base">
                                                     Large
                                                 </Label>
                                             </div>
                                         </RadioGroup>
                                     </div>
                                     <div>
-                                        <h4 className="mt-6">Choose the crust</h4>
+                                        <h4 className="mt-4 sm:mt-6 text-base sm:text-lg font-semibold">Choose the crust</h4>
                                         <RadioGroup
                                             defaultValue="thin"
-                                            className="grid grid-cols-3 gap-4 mt-2">
+                                            className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 mt-2">
                                             <div>
                                                 <RadioGroupItem
                                                     value="thin"
@@ -120,7 +134,7 @@ export default function ProductCart({
                                                 />
                                                 <Label
                                                     htmlFor="thin"
-                                                    className="flex flex-col items-center justify-between rounded-md border-2 bg-white p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary">
+                                                    className="flex flex-col items-center justify-between rounded-md border-2 bg-white p-3 sm:p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary text-sm sm:text-base">
                                                     Thin
                                                 </Label>
                                             </div>
@@ -134,23 +148,21 @@ export default function ProductCart({
                                                 />
                                                 <Label
                                                     htmlFor="thick"
-                                                    className="flex flex-col items-center justify-between rounded-md border-2 bg-white p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary">
+                                                    className="flex flex-col items-center justify-between rounded-md border-2 bg-white p-3 sm:p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary text-sm sm:text-base">
                                                     Thick
                                                 </Label>
                                             </div>
                                         </RadioGroup>
                                     </div>
                                     <ToppingList />
-                                    <div className="flex items-center justify-between mt-12">
-                                        <span className="font-bold">Rs:400</span>
-                                        <Button>
+                                    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-8 sm:mt-12">
+                                        <span className="font-bold text-lg sm:text-xl">Rs:400</span>
+                                        <Button className="w-full sm:w-auto">
                                             <ShoppingCart size={20} />
                                             <span className="ml-2">Add to cart</span>
                                         </Button>
                                     </div>
                                 </div>
-
-
                             </div>
                         </DialogContent>
                     </Dialog>
